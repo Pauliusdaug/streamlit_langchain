@@ -21,11 +21,9 @@ model = "openai/gpt-4.1-nano"
 
 
 loader = WebBaseLoader(
-    web_path=('https://lilianweng.github.io/posts/2017-06-21-overview/',),
+    web_path=('https://en.wikipedia.org/wiki/Kėdainiai',),
     bs_kwargs=dict(
-        parse_only=bs4.SoupStrainer(
-            class_=("post-content", "post-title, post-header")
-        )
+        parse_only=bs4.SoupStrainer(id="mw-content-text")
     ),
 )
 
